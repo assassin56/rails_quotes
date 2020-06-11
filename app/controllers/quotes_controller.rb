@@ -1,8 +1,15 @@
 class QuotesController < ApplicationController
 
   def index
-    @quotes = Quote.all
-    json_response(@quotes)
+    if params[:author]
+      author = params[:author]
+      quote = params[:quote]
+      @quotes = Quote.search(author)
+      json_response(@quotes)
+    else
+      @quotes = Quote.all
+      json_response(@quotes)
+    end
   end
 
   def show
@@ -39,11 +46,9 @@ class QuotesController < ApplicationController
   end
 
   private
-    # def json_response(object, status = :ok)
-    #   render json: object, status: status
-    # end
 
     def quote_params
       params.permit(:author, :quote, :id)
     end
+
 end

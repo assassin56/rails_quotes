@@ -148,6 +148,9 @@ GEM
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-throttle (0.7.0)
+      bundler (>= 1.0.0)
+      rack (>= 1.0.0)
     rails (5.2.4.3)
       actioncable (= 5.2.4.3)
       actionmailer (= 5.2.4.3)
@@ -286,6 +289,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)
+  rack-throttle (~> 0.7.0)
   rails (~> 5.2.4, >= 5.2.4.3)
   rspec-rails
   sass-rails (~> 5.0)

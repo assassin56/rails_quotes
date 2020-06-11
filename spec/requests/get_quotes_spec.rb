@@ -39,13 +39,13 @@ end
 describe "get quotes by id route", :type => :request do
  
   before do
-    post '/quotes', params: {:author => 'guy', :quote => 'fuck'}
-    get '/quotes', params: {:author => 'guy', :quote => 'fuck'}
+    post '/quotes', params: {:author => 'guy', :quote => 'oh darn'}
+    get '/quotes', params: {:author => 'guy', :quote => 'oh darn'}
   end
     
   it "returns a quote" do
     response_to = Quote.last
-    expect(response_to.quote).to eq('fuck')
+    expect(response_to.quote).to eq('oh darn')
   end
 
   it "returns 200 ok status " do
