@@ -13,13 +13,18 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.create!(quote_params)
     json_response(@quote, :created)
+    # if @quote.create!(quote_params)
+    #   render status: 200, json: {
+    #     message: "Created successfully!"
+    #   }
+    # end
   end
 
   def update
     @quote = Quote.find(params[:id])
     if @quote.update!(quote_params)
       render status: 200, json: {
-        message: "Saved Successfully"
+        message: "Updated Successfully"
       }
     end
   end
